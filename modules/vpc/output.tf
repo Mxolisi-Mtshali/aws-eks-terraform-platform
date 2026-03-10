@@ -1,24 +1,34 @@
-output "VPC_ID" {
-  value = aws_vpc.vpc.id
+output "vpc_id" {
+  description = "ID of the VPC"
+  value       = aws_vpc.this.id
 }
 
-output "PUB_SUB1_ID" {
-  value = aws_subnet.pub_sub1.id
-}
-output "PUB_SUB2_ID" {
-  value = aws_subnet.pub_sub2.id
-}
-output "PRI_SUB3_ID" {
-  value = aws_subnet.pri_sub3.id
+output "pub_sub1_id" {
+  description = "ID of public subnet 1"
+  value       = aws_subnet.pub_sub1.id
 }
 
-output "PRI_SUB4_ID" {
-  value = aws_subnet.pri_sub4.id
-}
-output "IGW_ID" {
-    value = aws_internet_gateway.igw
+output "pub_sub2_id" {
+  description = "ID of public subnet 2"
+  value       = aws_subnet.pub_sub2.id
 }
 
-output "REGION" {
-  value = var.REGION
+output "pri_sub3_id" {
+  description = "ID of private subnet 3"
+  value       = aws_subnet.pri_sub3.id
+}
+
+output "pri_sub4_id" {
+  description = "ID of private subnet 4"
+  value       = aws_subnet.pri_sub4.id
+}
+
+output "igw_id" {
+  description = "ID of the internet gateway"
+  value       = aws_internet_gateway.this.id
+}
+
+output "region" {
+  description = "AWS region used by the VPC module"
+  value       = var.region
 }
